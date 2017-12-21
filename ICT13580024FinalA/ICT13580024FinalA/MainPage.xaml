@@ -4,7 +4,8 @@
              xmlns:local="clr-namespace:ICT13580024FinalA"
              x:Class="ICT13580024FinalA.MainPage"
              Title="13580024">
-
+    
+    
     <ContentPage.ToolbarItems>
         
         <ToolbarItem
@@ -12,16 +13,16 @@
             x:Name="newButton"/>
 
     </ContentPage.ToolbarItems>
-    
-    <ScrollView>
-        
-    <ListView
-        x:Name="employeeListView"
-        RowHeight="300">
 
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
+    <ScrollView>
+
+        <ListView
+            x:Name="employeeListView"
+            RowHeight="300">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
 
                     <ViewCell.ContextActions>
 
@@ -41,6 +42,7 @@
                     <StackLayout
                         Padding="10">
 
+              
                         <StackLayout
                             Orientation="Horizontal">
                             <Label
@@ -70,7 +72,8 @@
                             Text="{Binding Email, StringFormat='Email {0}'}"/>
 
                         <Label
-                            Text="{Binding Address, StringFormat='ที่อยู่ {0}'}"/>
+                            Text="{Binding Address, StringFormat='ที่อยู่ {0}'}"
+                            LineBreakMode="TailTruncation"/>
 
                         <Label
                             Text="{Binding Marry, StringFormat='สถานะแต่งงาน {0}'}"/>
@@ -80,8 +83,6 @@
 
                         <Label
                             Text="{Binding Salary, StringFormat='เงินเดือน {0} บาท'}"/>
-
-                        
 
                         </StackLayout>
 
