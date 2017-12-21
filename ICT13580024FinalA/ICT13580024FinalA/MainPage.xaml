@@ -2,10 +2,94 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ICT13580024FinalA"
-             x:Class="ICT13580024FinalA.MainPage">
+             x:Class="ICT13580024FinalA.MainPage"
+             Title="13580024">
 
-	<Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <ContentPage.ToolbarItems>
+        
+        <ToolbarItem
+            Text="New"
+            x:Name="newButton"/>
 
+    </ContentPage.ToolbarItems>
+    
+    <ScrollView>
+        
+    <ListView
+        x:Name="employeeListView"
+        RowHeight="300">
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+
+                    <ViewCell.ContextActions>
+
+                        <MenuItem
+                            Text="Edit"
+                            CommandParameter="{Binding .}"
+                            Clicked="Edit_Clicked"/>
+
+                        <MenuItem
+                            Text="Delete"
+                            CommandParameter="{Binding .}"
+                            IsDestructive="True"
+                            Clicked="Delete_Clicked"/>
+
+                    </ViewCell.ContextActions>
+
+                    <StackLayout
+                        Padding="10">
+
+                        <StackLayout
+                            Orientation="Horizontal">
+                            <Label
+                                Text="{Binding FirstName}"
+                                FontAttributes="Bold"
+                                TextColor="Navy"/>
+
+                            <Label
+                                Text="{Binding LastName}"
+                                FontAttributes="Bold"
+                                TextColor="Navy"/>
+                        </StackLayout>
+
+                        <Label
+                            Text="{Binding Age, StringFormat='อายุ {0} ปี'}"/>
+
+                        <Label
+                            Text="{Binding Gender, StringFormat='เพศ {0}'}"/>
+
+                        <Label
+                            Text="{Binding Department, StringFormat='แผนก {0}'}"/>
+
+                        <Label
+                            Text="{Binding TelNumber, StringFormat='เบอร์โทร {0}'}"/>
+
+                         <Label
+                            Text="{Binding Email, StringFormat='Email {0}'}"/>
+
+                        <Label
+                            Text="{Binding Address, StringFormat='ที่อยู่ {0}'}"/>
+
+                        <Label
+                            Text="{Binding Marry, StringFormat='สถานะแต่งงาน {0}'}"/>
+
+                        <Label
+                            Text="{Binding Baby, StringFormat='จำนวนบุตร {0} คน'}"/>
+
+                        <Label
+                            Text="{Binding Salary, StringFormat='เงินเดือน {0} บาท'}"/>
+
+                        
+
+                        </StackLayout>
+
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+    </ListView>
+        
+    </ScrollView>
 </ContentPage>
